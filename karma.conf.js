@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/smartfactory-app'),
+      dir: require('path').join(__dirname, './coverage/smart-factory'),
       subdir: '.',
       reporters: [
         { type: 'html' },
