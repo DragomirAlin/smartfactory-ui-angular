@@ -1,20 +1,21 @@
 import {Injectable} from '@angular/core';
 import {Cookie} from 'ng2-cookies';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/map';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {Observable, throwError} from 'rxjs';
 import {JwtHelperService} from '@auth0/angular-jwt';
+import {catchError, retry} from 'rxjs/operators';
 
-@Injectable()
+
+@Injectable({
+    providedIn: 'root'
+})
 export class AppService {
     public jwtHelper = new JwtHelperService();
     public clientId = 'jwtClient';
     public organization = 'none';
-    public redirectUri = 'http://localhost:8080/';
+    public redirectUri = 'http://localhost:4200/';
 
-    constructor(
-        private http: HttpClient) {
+    constructor(private http: HttpClient) {
     }
 
 
@@ -43,7 +44,7 @@ export class AppService {
         Cookie.set('access_token', token.access_token, expireDate);
         console.log('Obtained Access token');
         this.getOrganization();
-        window.location.href = 'http://localhost:8084';
+        window.location.href = 'http://localhost:4200';
     }
 
     getResource(resourceUrl): Observable<any> {
