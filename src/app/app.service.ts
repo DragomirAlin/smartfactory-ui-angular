@@ -3,7 +3,6 @@ import {Cookie} from 'ng2-cookies';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import {JwtHelperService} from '@auth0/angular-jwt';
-import {catchError, retry} from 'rxjs/operators';
 
 
 @Injectable({
