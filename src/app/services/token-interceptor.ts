@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
-import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
-import { from, Observable } from 'rxjs';
-import { concatMap, map } from 'rxjs/operators';
+import {Injectable} from '@angular/core';
+import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
+import {from, Observable} from 'rxjs';
+import {concatMap, map} from 'rxjs/operators';
 import {AuthService} from './auth.service';
 
 @Injectable()
@@ -16,7 +16,13 @@ export class TokenInterceptor implements HttpInterceptor {
 
         return tokenObservable.pipe(
             map(authToken => {
-                req = req.clone({setHeaders: {Authorization: 'Bearer ' + authToken}});
+                req = req.clone(
+                    {
+                        setHeaders:
+                            {
+                                Authorization: 'Bearer ' + authToken
+                            }
+                    });
             }),
             concatMap(request => {
                 return next.handle(req);
