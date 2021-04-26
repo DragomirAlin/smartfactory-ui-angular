@@ -11,7 +11,7 @@ export class AuthService {
     public jwtHelper = new JwtHelperService();
     public clientId = 'jwtClient';
     public organization = 'none';
-    public redirectUri = 'http://localhost:8080/';
+    public redirectUri = 'http://localhost:4200/home';
 
     constructor(
         private http: HttpClient) {
