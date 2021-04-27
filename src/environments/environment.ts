@@ -10,7 +10,8 @@ export const environment = {
   loginUrl: 'http://localhost:8083/auth/realms/baeldung/protocol/openid-connect/auth?response_type=code&&scope=write%20read&client_id=',
   grantType: 'authorization_code',
   clientSecret: 'jwtClientSecret',
-  openIdUrl: 'http://localhost:8083/auth/realms/baeldung/protocol/openid-connect/token'
+  openIdUrl: 'http://localhost:8083/auth/realms/baeldung/protocol/openid-connect/token',
+  logoutUrl: 'http://localhost:8083/auth/realms/baeldung/protocol/openid-connect/logout?id_token_hint=',
 };
 
 /*
