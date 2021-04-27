@@ -34,7 +34,7 @@ export class AuthService {
             );
     }
 
-    checkCredentials(): any {
+    isAuthenticated(): any {
         return this.tokenService.checkToken();
     }
 

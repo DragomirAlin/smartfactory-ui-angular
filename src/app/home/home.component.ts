@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.isAuthenticated = this.authService.checkCredentials();
+        this.isAuthenticated = this.authService.isAuthenticated();
         const i = window.location.href.indexOf('code');
         if (!this.isAuthenticated && i !== -1) {
             this.authService.retrieveToken(window.location.href.substring(i + 5));
