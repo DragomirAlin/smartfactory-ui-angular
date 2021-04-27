@@ -6,7 +6,11 @@ export const environment = {
   production: false,
   clientId: 'jwtClient',
   organization: 'none',
-  redirectUri: 'http://localhost:4200/'
+  redirectUri: 'http://localhost:4200/home',
+  loginUrl: 'http://localhost:8083/auth/realms/baeldung/protocol/openid-connect/auth?response_type=code&&scope=write%20read&client_id=',
+  grantType: 'authorization_code',
+  clientSecret: 'jwtClientSecret',
+  openIdUrl: 'http://localhost:8083/auth/realms/baeldung/protocol/openid-connect/token'
 };
 
 /*

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../services/auth.service';
+import {environment} from '../../environments/environment';
 
 @Component({
     selector: 'app-welcome',
@@ -13,9 +14,9 @@ export class WelcomeComponent implements OnInit {
 
     ngOnInit(): void {
     }
+
     login(): void {
-        window.location.href = 'http://localhost:8083/auth/realms/baeldung/protocol/openid-connect/auth?response_type=code&&scope=write%20read&client_id=' +
-            this.authService.clientId;
+        window.location.href = environment.loginUrl + environment.clientId;
     }
 
 }
