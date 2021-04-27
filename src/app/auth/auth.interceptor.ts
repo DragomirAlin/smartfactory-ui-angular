@@ -5,7 +5,7 @@ import {AuthService} from './auth.service';
 import {TokenService} from './token-service';
 
 @Injectable()
-export class TokenInterceptor implements HttpInterceptor {
+export class AuthInterceptor implements HttpInterceptor {
 
     constructor(private auth: AuthService, private tokenService: TokenService) {
     }
@@ -26,5 +26,5 @@ export class TokenInterceptor implements HttpInterceptor {
 }
 
 export const authInterceptorProviders = [
-    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
 ];

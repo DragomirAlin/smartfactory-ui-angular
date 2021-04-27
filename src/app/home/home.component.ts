@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthService} from '../services/auth.service';
-import {environment} from '../../environments/environment';
+import {AuthService} from '../auth/auth.service';
 
 @Component({
     selector: 'app-home',
@@ -8,15 +7,16 @@ import {environment} from '../../environments/environment';
     styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-    public isLoggedIn = false;
+    public isAuthenticated = false;
+
 
     constructor(private authService: AuthService) {
     }
 
     ngOnInit(): void {
-        this.isLoggedIn = this.authService.checkCredentials();
+        this.isAuthenticated = this.authService.checkCredentials();
         const i = window.location.href.indexOf('code');
-        if (!this.isLoggedIn && i !== -1) {
+        if (!this.isAuthenticated && i !== -1) {
             this.authService.retrieveToken(window.location.href.substring(i + 5));
         }
     }
