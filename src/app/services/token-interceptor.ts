@@ -1,31 +1,30 @@
 import {Injectable} from '@angular/core';
-import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
-import {from, Observable} from 'rxjs';
-import {concatMap, map} from 'rxjs/operators';
+import {HTTP_INTERCEPTORS, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
+import {Observable} from 'rxjs';
 import {AuthService} from './auth.service';
+import {TokenService} from './token-service';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
 
-    constructor(private auth: AuthService) {
+    constructor(private auth: AuthService, private tokenService: TokenService) {
     }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        const tokenPromise: Promise<string> = this.auth.retrieveToken('Smart Factory');
-        const tokenObservable: Observable<string> = from(tokenPromise);
+        let authReq = req;
+        const token = this.tokenService.getToken();
+        if (token != null) {
+            authReq = req.clone({
+                setHeaders: {
+                    Authorization: `Bearer ${token}`,
+                },
 
-        return tokenObservable.pipe(
-            map(authToken => {
-                req = req.clone(
-                    {
-                        setHeaders:
-                            {
-                                Authorization: 'Bearer ' + authToken
-                            }
-                    });
-            }),
-            concatMap(request => {
-                return next.handle(req);
-            }));
+            });
+        }
+        return next.handle(authReq);
     }
 }
+
+export const authInterceptorProviders = [
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
+];
