@@ -13,7 +13,7 @@ export class AuthService {
     public jwtHelper = new JwtHelperService();
     public clientId = 'jwtClient';
     public organization = 'none';
-    public redirectUri = 'http://localhost:4200/home';
+    public redirectUri = 'http://localhost:4200/home/';
 
     constructor(
         private http: HttpClient) {
@@ -45,7 +45,7 @@ export class AuthService {
         Cookie.set('access_token', token.access_token, expireDate);
         console.log('Obtained Access token');
         this.getOrganization();
-        window.location.href = 'http://localhost:8084';
+        window.location.href = 'http://localhost:4200/home';
     }
 
     getResource(resourceUrl): Observable<any> {
