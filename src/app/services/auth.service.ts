@@ -6,7 +6,9 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import {JwtHelperService} from '@auth0/angular-jwt';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class AuthService {
     public jwtHelper = new JwtHelperService();
     public clientId = 'jwtClient';
