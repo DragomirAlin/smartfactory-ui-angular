@@ -1,0 +1,13 @@
+dist/
+tmp/
+app/**/*.js
+app/**/*.js.map
+
+# dependencies
+node_modules/
+bower_components/
+
+e2e/*.js
+e2e/*.map
+./e2e
+.e2e
