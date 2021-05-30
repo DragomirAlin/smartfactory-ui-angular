@@ -7,11 +7,11 @@ export const environment = {
   clientId: 'jwtClient',
   organization: 'none',
   redirectUri: 'http://localhost:4200/home',
-  loginUrl: 'http://localhost:8083/auth/realms/baeldung/protocol/openid-connect/auth?response_type=code&&scope=write%20read&client_id=',
+  loginUrl: 'http://localhost:8083/auth/realms/smartfactory/protocol/openid-connect/auth?response_type=code&&scope=write%20read&client_id=',
   grantType: 'authorization_code',
   clientSecret: 'jwtClientSecret',
-  openIdUrl: 'http://localhost:8083/auth/realms/baeldung/protocol/openid-connect/token',
-  logoutUrl: 'http://localhost:8083/auth/realms/baeldung/protocol/openid-connect/logout?id_token_hint=',
+  openIdUrl: 'http://localhost:8083/auth/realms/smartfactory/protocol/openid-connect/token',
+  logoutUrl: 'http://localhost:8083/auth/realms/smartfactory/protocol/openid-connect/logout?id_token_hint=',
 };
 
 /*
