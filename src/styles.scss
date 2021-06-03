@@ -1,4 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.welcome {
+  background-image: url("/assets/images/wallpaper.jpg");
+  display: block;
+  position: center;
+}
+
+.title {
+  width: 7em;
+  font-size: 3em;
+  color: white;
+  font-family: "Roboto", serif;
+  font-weight: bold;
+}
+
+.blinking {
+  border-bottom: 3px solid #9ae2ff;
+  animation-name: blinking;
+  animation-duration: 1s;
+  animation-iteration-count: 100;
+}
+
+@keyframes blinking {
+  50% {
+    border-color: #04242F;
+  }
+}
