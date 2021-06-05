@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthService} from '../auth/auth.service';
 import {environment} from '../../environments/environment';
 
 @Component({
@@ -9,14 +8,14 @@ import {environment} from '../../environments/environment';
 })
 export class WelcomeComponent implements OnInit {
 
-    constructor(private authService: AuthService) {
+    constructor() {
     }
 
     ngOnInit(): void {
     }
 
     login(): void {
-        window.location.href = environment.loginUrl + environment.clientId;
+        window.location.href = environment.loginUrl + environment.redirectUri;
     }
 
 }
