@@ -13,7 +13,7 @@ export class TokenService {
     }
 
     public saveToken(token): any {
-        const expireDate = new Date().getTime() + (1000 * token.expires_in);
+        const expireDate = new Date().getTime() + (10000 * token.expires_in);
         Cookie.set(TOKEN_KEY, token.access_token, expireDate);
         window.location.href = environment.redirectUri;
     }

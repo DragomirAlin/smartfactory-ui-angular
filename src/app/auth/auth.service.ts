@@ -34,7 +34,7 @@ export class AuthService {
             );
     }
 
-    isAuthenticated(): any {
+    isAuthenticated(): boolean {
         return this.tokenService.checkToken();
     }
 
