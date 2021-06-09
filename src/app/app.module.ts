@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import {HttpClientModule} from '@angular/common/http';
-import {AuthService} from './auth/auth.service';
-import {AuthGuard} from './auth/auth.guard';
+import {AuthService} from './auth/service/auth.service';
+import {AuthGuard} from './auth/guard/auth.guard';
 
 @NgModule({
   declarations: [

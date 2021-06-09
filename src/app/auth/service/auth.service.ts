@@ -3,8 +3,8 @@ import {Cookie} from 'ng2-cookies';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
-import {environment} from '../../environments/environment';
-import {TokenService} from './token-service';
+import {environment} from '../../../environments/environment';
+import {TokenService} from '../token/token-service';
 
 @Injectable({
     providedIn: 'root'

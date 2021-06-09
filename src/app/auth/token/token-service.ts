@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Cookie} from 'ng2-cookies';
-import {environment} from '../../environments/environment';
+import {environment} from '../../../environments/environment';
 
 const TOKEN_KEY = 'access_token';
 

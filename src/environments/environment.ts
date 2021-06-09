@@ -12,6 +12,7 @@ export const environment = {
   clientSecret: 'jwtClientSecret',
   openIdUrl: 'http://localhost:8083/auth/realms/smartfactory/protocol/openid-connect/token',
   logoutUrl: 'http://localhost:8083/auth/realms/smartfactory/protocol/openid-connect/logout?id_token_hint=',
+  configFile: 'assets/config/config.dev.json'
 };
 
 /*
