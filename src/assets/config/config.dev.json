@@ -1,5 +1,5 @@
 {
     "KEYCLOAK_URL": "http://localhost:8083",
     "KEYCLOAK_REALM": "smartfactory",
-    "KEYCLOAK_CLIENT_ID": "smartfactory"
+    "KEYCLOAK_CLIENT_ID": "jwtClient"
 }
