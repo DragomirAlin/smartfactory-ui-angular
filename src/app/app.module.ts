@@ -3,26 +3,34 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
-import {WelcomeComponent} from './welcome/welcome.component';
 import {HttpClientModule} from '@angular/common/http';
 import {AuthGuard} from './auth/guard/auth.guard';
 import {KeycloakAngularModule, KeycloakService} from 'keycloak-angular';
 import {initializeKeycloak} from './auth/init/keycloak-init.factory';
 import {ConfigInitService} from './auth/init/config-init.service';
-import { DatasetComponent } from './dataset/dataset.component';
+import {DatasetComponent} from './dataset/dataset.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon';
+import {SidebarComponent} from './components/sidebar/sidebar.component';
+import {NavbarComponent} from './components/navbar/navbar.component';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 
 @NgModule({
     declarations: [
         AppComponent,
         HomeComponent,
-        WelcomeComponent,
         DatasetComponent,
+        SidebarComponent,
+        NavbarComponent,
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
         KeycloakAngularModule,
+        BrowserAnimationsModule,
+        MatIconModule,
+        FontAwesomeModule
     ],
     providers: [HttpClientModule, AuthGuard, ConfigInitService,
         {

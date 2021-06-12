@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   clientId: 'jwtClient',
   organization: 'none',
-  redirectUri: 'http://localhost:4200/home',
+  redirectUri: 'http://localhost:4200',
   loginUrl: 'http://localhost:8083/auth/realms/smartfactory/protocol/openid-connect/auth?response_type=code&&scope=write%20read&client_id=jwtClient&redirect_uri=',
   grantType: 'authorization_code',
   clientSecret: 'jwtClientSecret',
