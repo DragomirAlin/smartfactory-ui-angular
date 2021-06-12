@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <header>
-    <app-navbar [isLoggedIn]="isLoggedIn" [logout]="logout"></app-navbar>
+    <app-navbar [isLoggedIn]="isLoggedIn" [logout]="logout.bind(this)"></app-navbar>
 </header>
 <body>
 <div class="container-fluid">
