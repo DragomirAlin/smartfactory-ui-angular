@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {WelcomeComponent} from './welcome/welcome.component';
 import {AuthGuard} from './auth/guard/auth.guard';
+import {DatasetComponent} from './dataset/dataset.component';
 
 const routes: Routes = [
     {
@@ -12,6 +13,11 @@ const routes: Routes = [
     {
         path: 'home',
         component: HomeComponent,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'dataset',
+        component: DatasetComponent,
         canActivate: [AuthGuard]
     }
 ];
