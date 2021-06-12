@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../auth/service/auth.service';
 import {KeycloakService} from 'keycloak-angular';
+import {KeycloakProfile} from 'keycloak-js';
 
 @Component({
     selector: 'app-home',
@@ -8,15 +9,22 @@ import {KeycloakService} from 'keycloak-angular';
     styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-    public isAuthenticated = false;
+    public isLoggedIn = false;
+    public userProfile: KeycloakProfile | null = null;
 
 
     constructor(private keycloakService: KeycloakService) {
     }
 
-    ngOnInit(): void {
+    public async ngOnInit(): Promise<void> {
+        this.isLoggedIn = await this.keycloakService.isLoggedIn();
+
+        if (this.isLoggedIn) {
+            this.userProfile = await this.keycloakService.loadUserProfile();
+        }
     }
-    logout(): void {
+
+    public logout(): void {
         this.keycloakService.logout();
     }
 
