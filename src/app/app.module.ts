@@ -14,6 +14,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {SidebarComponent} from './components/sidebar/sidebar.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import { NotificationComponent } from './notification/notification.component';
+import { IntegrationComponent } from './integration/integration.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
     declarations: [
@@ -22,6 +25,9 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
         DatasetComponent,
         SidebarComponent,
         NavbarComponent,
+        NotificationComponent,
+        IntegrationComponent,
+        ProfileComponent,
     ],
     imports: [
         BrowserModule,

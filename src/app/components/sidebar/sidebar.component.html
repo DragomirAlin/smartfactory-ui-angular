@@ -15,12 +15,12 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/" [ngClass]="{'active': selectedItem === 'notification'}" (click)="selectedItem = 'notification'">
+                <a class="nav-link" routerLink="/notification" [ngClass]="{'active': selectedItem === 'notification'}" (click)="selectedItem = 'notification'">
                     <mat-icon inline>notifications</mat-icon> Notification
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" [ngClass]="{'active': selectedItem === 'integrations'}" (click)="selectedItem = 'integrations'">
+                <a class="nav-link" routerLink="/integration" [ngClass]="{'active': selectedItem === 'integrations'}" (click)="selectedItem = 'integrations'">
                     <mat-icon inline>cloud_queue</mat-icon> Integrations
                 </a>
             </li>
@@ -31,7 +31,7 @@
         </h5>
         <ul class="nav flex-column mb-2">
             <li class="nav-item">
-                <a class="nav-link" routerLink="/" [ngClass]="{'active': selectedItem === 'profile'}" (click)="selectedItem = 'profile'">
+                <a class="nav-link" routerLink="/profile" [ngClass]="{'active': selectedItem === 'profile'}" (click)="selectedItem = 'profile'">
                     <mat-icon inline>badge</mat-icon> Profile
                 </a>
             </li>
