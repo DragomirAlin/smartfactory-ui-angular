@@ -3,18 +3,18 @@ import { Configuration } from './configuration';
 import { HttpClient } from '@angular/common/http';
 
 
-import { PetService } from './api/pet.service';
-import { StoreService } from './api/store.service';
-import { UserService } from './api/user.service';
+import { AcquisitionService } from './api/acquisition.service';
+import { NotificationService } from './api/notification.service';
+import { SubscriptionService } from './api/subscription.service';
 
 @NgModule({
   imports:      [],
   declarations: [],
   exports:      [],
   providers: [
-    PetService,
-    StoreService,
-    UserService ]
+    AcquisitionService,
+    NotificationService,
+    SubscriptionService ]
 })
 export class ApiModule {
     public static forRoot(configurationFactory: () => Configuration): ModuleWithProviders<any> {

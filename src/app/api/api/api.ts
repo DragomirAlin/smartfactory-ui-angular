@@ -1,7 +1,7 @@
-export * from './pet.service';
-import { PetService } from './pet.service';
-export * from './store.service';
-import { StoreService } from './store.service';
-export * from './user.service';
-import { UserService } from './user.service';
-export const APIS = [PetService, StoreService, UserService];
+export * from './acquisition.service';
+import { AcquisitionService } from './acquisition.service';
+export * from './notification.service';
+import { NotificationService } from './notification.service';
+export * from './subscription.service';
+import { SubscriptionService } from './subscription.service';
+export const APIS = [AcquisitionService, NotificationService, SubscriptionService];
