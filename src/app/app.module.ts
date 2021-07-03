@@ -14,9 +14,10 @@ import {MatIconModule} from '@angular/material/icon';
 import {SidebarComponent} from './components/sidebar/sidebar.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
-import { NotificationComponent } from './notification/notification.component';
-import { IntegrationComponent } from './integration/integration.component';
-import { ProfileComponent } from './profile/profile.component';
+import {NotificationComponent} from './notification/notification.component';
+import {IntegrationComponent} from './integration/integration.component';
+import {ProfileComponent} from './profile/profile.component';
+import {ApiModule} from './api';
 
 @NgModule({
     declarations: [
@@ -36,7 +37,8 @@ import { ProfileComponent } from './profile/profile.component';
         KeycloakAngularModule,
         BrowserAnimationsModule,
         MatIconModule,
-        FontAwesomeModule
+        FontAwesomeModule,
+        ApiModule
     ],
     providers: [HttpClientModule, AuthGuard, ConfigInitService,
         {
