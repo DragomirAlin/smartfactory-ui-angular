@@ -17,7 +17,9 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import { NotificationComponent } from './notification/notification.component';
 import { IntegrationComponent } from './integration/integration.component';
 import { ProfileComponent } from './profile/profile.component';
+import {MatTableModule} from '@angular/material/table';
 import {ApiModule} from './api';
+import {NgxJsonViewerModule} from 'ngx-json-viewer';
 
 @NgModule({
     declarations: [
@@ -38,7 +40,9 @@ import {ApiModule} from './api';
         BrowserAnimationsModule,
         MatIconModule,
         FontAwesomeModule,
-        ApiModule
+        ApiModule,
+        MatTableModule,
+        NgxJsonViewerModule
     ],
     providers: [HttpClientModule, AuthGuard, ConfigInitService,
         {
