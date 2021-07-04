@@ -7,6 +7,7 @@ import {AppComponent} from './app.component';
 import {NotificationComponent} from './notification/notification.component';
 import {IntegrationComponent} from './integration/integration.component';
 import {ProfileComponent} from './profile/profile.component';
+import {NotificationAddComponent} from './notification-add/notification-add.component';
 
 const routes: Routes = [
     {
@@ -22,7 +23,14 @@ const routes: Routes = [
     {
         path: 'notification',
         component: NotificationComponent,
-        canActivate: [AuthGuard]
+        canActivate: [AuthGuard],
+        children: [
+            {
+                path: 'add',
+                component: NotificationAddComponent,
+                canActivate: [AuthGuard]
+            }
+        ]
     },
     {
         path: 'integration',
@@ -33,6 +41,9 @@ const routes: Routes = [
         path: 'profile',
         component: ProfileComponent,
         canActivate: [AuthGuard]
+    },
+    {
+        path: 'notification/add'
     }
 ];
 

@@ -20,6 +20,11 @@ import { ProfileComponent } from './profile/profile.component';
 import {MatTableModule} from '@angular/material/table';
 import {ApiModule} from './api';
 import {NgxJsonViewerModule} from 'ngx-json-viewer';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatNativeDateModule, MatOptionModule} from '@angular/material/core';
+import {FormsModule} from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select';
+import { NotificationAddComponent } from './notification-add/notification-add.component';
 
 @NgModule({
     declarations: [
@@ -31,6 +36,7 @@ import {NgxJsonViewerModule} from 'ngx-json-viewer';
         NotificationComponent,
         IntegrationComponent,
         ProfileComponent,
+        NotificationAddComponent,
     ],
     imports: [
         BrowserModule,
@@ -42,7 +48,12 @@ import {NgxJsonViewerModule} from 'ngx-json-viewer';
         FontAwesomeModule,
         ApiModule,
         MatTableModule,
-        NgxJsonViewerModule
+        NgxJsonViewerModule,
+        MatNativeDateModule,
+        MatFormFieldModule,
+        FormsModule,
+        MatOptionModule,
+        MatSelectModule,
     ],
     providers: [HttpClientModule, AuthGuard, ConfigInitService,
         {
